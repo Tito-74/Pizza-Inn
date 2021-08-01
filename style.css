@@ -25,3 +25,16 @@ height: 80px;
     font-weight: bold;
     font-family: 'Style Script', cursive;
 }
+.container .advert{
+    background-image: url(assetes/pizza\ background.jpg);
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+.container .advert .group-1{
+    flex-direction: column;
+
+}
+.container .advert img{
+    height: 200px;
+    width: 250px;
+}
