@@ -97,32 +97,76 @@
     <div class="container container-form">
         <h1>Order Pizza</h1>
         <form id="form-order" name="formOrder">
-            <label>Chose your preferred Size:</label>
-        <div class="checkbox1">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="size" id="small" value="Small">
-                <label class="form-check-label" for="inlineRadio1">Small </label>
+                <label>Chose your preferred Size:</label>
+            <div class="checkbox1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="size" id="small" value="Small">
+                    <label class="form-check-label" for="inlineRadio1">Small </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="size" id="medium" value="Medium">
+                    <label class="form-check-label" for="inlineRadio2">Medium </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="size" id="large" value="Large">
+                    <label class="form-check-label" for="inlineRadio3">Large </label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="size" id="medium" value="Medium">
-                <label class="form-check-label" for="inlineRadio2">Medium </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="size" id="large" value="Large">
-                <label class="form-check-label" for="inlineRadio3">Large </label>
-            </div>
-        </div>
-        <div class="order">
-            <label>Pick your pizza Type:</label>
-            <select class="form-control form-control" name="fieldArea" id="type" required>
-            <option value=""></option>
-            <option value="Veggie">Veggie Pizza</option>
-            <option value="Cheese">Cheese Pizza</option>
-            <option value="periperi"> Pepperoni Pizza</option>
-            <option value="BBQChicken"> BBQ Chicken Pizza</option>
-            <option value="Margherita">Margherita Pizza</option>
-            <option value="hawaiian">Hawaiian Pizza</option>
-            </select>
+            <div class="order">
+                <label>Pick your pizza Type:</label>
+                <select class="form-control form-control" name="fieldArea" id="type" required>
+                    <option value=""></option>
+                    <option value="Veggie">Veggie Pizza</option>
+                    <option value="Cheese">Cheese Pizza</option>
+                    <option value="periperi"> Pepperoni Pizza</option>
+                    <option value="BBQChicken"> BBQ Chicken Pizza</option>
+                    <option value="Margherita">Margherita Pizza</option>
+                    <option value="hawaiian">Hawaiian Pizza</option>
+                </select>
+                <label for="crust">Choose your favorite Crust:</label>
+                <select class="form-control" name="fieldArea" id="crust" required>
+                    <option value=""></option>
+                    <option value="thin">Tilapia Crust @ Ksh. 100</option>
+                    <option value="thick">Omena Crust @ Ksh. 150</option>
+                    <option value="flatbread">Kingfisher Crust @ sh. 200</option>
+                    <option value="custom">Pumkin Crust @ sh. 300</option>
+                </select>
+                <label>Select Your favourite Toppings</label>
+                <select class="form-control form-control" name="fieldArea" id='topping' required>
+                    <option value=""></option>
+                    <option value="tomato">Pepper @ sh. 180</option>
+                    <option value="pineapple">Pineaples @ sh. 200</option>
+                    <option value="redpepper">Red Pepper @ sh. 120</option>
+                    <option value="irish">Irish @ sh. 220</option>
+                    <option value="grapes">Grapes @ sh. 320</option>
+                    <option value="chicken">Chicken @ sh. 170</option>
+                </select>
+                <div class="form-group">
+                    <label for="number">Number of Pizza's</label>
+                    <input type="number" class="form-control" id="number" placeholder="Number of pizza" min="1" required> 
+
+                </div>
+                <div id="details">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="fullname" placeholder="Enter Your Name">
+                    </div>
+                    <label>Do you want you order to be delivered?</label>
+                    <div class="checkbox">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="deliverd">
+                            <label class="form-check-label" for="inlineRadio1">Yes </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="noDelivery">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group location">
+                        <input type="text" class="form-control" id="location" placeholder="Enter your Location">
+                    </div>
+                </div>
+                <button type="submit" id="submit" onclick="">Make Order</button>
+        </form>
 
     </div>
 <script src="js/main.js"></script>
