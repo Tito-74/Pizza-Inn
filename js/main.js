@@ -36,7 +36,7 @@ PizzaOrder.prototype.getTopping = function (){
     PizzaOrder.prototype.getSize = function () {
     if (this.pizzaType == "Veggie") {
     if (this.size == "Small") {
-    return 10000
+    return 550
     } else if (this.size == "Medium")
     return 800
     else {
@@ -88,3 +88,93 @@ PizzaOrder.prototype.getTopping = function (){
     return false;
     }
 }
+//user Interface
+function fullBill() {
+  var sum = 0;
+  $(".billPerOrder").each(function () {
+  var value = $(this).text();
+  if (!isNaN(value) && value.length != 0) {
+  sum += parseFloat(value);
+  console.log (sum);
+  }
+  });
+  if (document.getElementById('deliverd').checked) {
+  var result = "Your order is Ksh. " + sum + " with a delivery fee of Ksh. 200 ";
+  var orderBill = sum + 200;
+  var total = "Total: Ksh. " + orderBill + " .00";
+  $('#result').text(result);
+  $('#totalCost').text(total);
+  swal({
+  title: "Your order will be delivered to your Location at a fee of 200 shillings",
+  icon: "success",
+  })
+  
+  } else {
+  var total = "Total: Ksh. " + sum + " .00";
+  $('#totalCost').text(total)
+  }
+  }
+  fullBill();
+//checkout button
+function checkout() {
+alert('Your order has been placed successfully. Thank You for shopping with Us')
+// swal({
+// title: "Your order has been placed successfully." + "\r\n" + "Thank You for shopping with Us",
+// icon: "success",
+// }).then((value) => {
+// location.reload();
+// });
+}
+$('.checkbox').change(function () {
+if (document.getElementById("deliverd").checked) {
+$('.location').show();
+} else {
+$('.location').hide();
+}
+});
+$(function(){
+  $("#submit").click(function (event) {
+  event.preventDefault();
+  var size = $("input[type='radio']:checked").val();
+  var type = $("#type option:selected").val();
+  var crust = $("#crust option:selected").val();
+  var topping = $("#topping option:selected").val();
+  var number = $("#number").val();
+  var fullName = $("#fullname").val();
+  if (type == '' || size == '' || crust == '' || topping == '' || number == ''|| fullName == '') {
+  alert('Please make a complete order first');
+  }else if (document.getElementById("deliverd").checked && $('#location').val() == '') {
+  alert('Please fill out your location')
+  }
+  else {
+  var inputSize = $("input[type='radio']:checked").val();
+  var inputType = $('#type option:selected').val();
+  var inputCrust = $('#crust option:selected').val();
+  var inputquantity = $('#number').val();
+  var inputTopping = $('#topping option:selected').val();
+  //create new object
+  var newOrder = new PizzaOrder(inputSize, inputType, inputCrust, inputTopping);
+  
+  //price per order
+  var pizzaBill = (newOrder.getSize() + newOrder.getCrust() + newOrder.getTopping()) * inputquantity;
+  console.log(newOrder.size);
+  // console.log(inputSize);
+  $('.displayOrder').show();
+$(".table tbody:last").append("<tr>" +
+"<td>" + $('#type option:selected').text() + "</td>" +
+"<td>" + $("input[type='radio']:checked").val() + "</td>" +
+"<td>" + $('#crust option:selected').text() + "</td>" +
+"<td>" + $('#topping option:selected').text() + "</td>" +
+"<td>" + $('#number').val() + "</td>" +
+"<td><span class='billPerOrder'>" + pizzaBill + "</span></td>" +
++
+"</tr>");
+$(fullBill);
+
+}
+})
+$('#checkout').click(function () {
+checkout();
+})
+
+});
