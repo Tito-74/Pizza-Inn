@@ -43,8 +43,12 @@ height: 80px;
 }
 .container-form{
     align-items: center;
-    background-color: aqua;
+    background-image: url(/assetes/advert/veggie.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
     justify-content: center;
+    border-radius: 30px;
     
 }
  .checkbox{
@@ -52,16 +56,21 @@ height: 80px;
     
 }
   form{
+    width: 50%;
     margin-left: 20%;
+    background-color: beige;
+    padding: 60px;
+    
   }
   .container-form .order{
     align-items: center;
-    width: 40%;
+    /* width: 60%; */
     
  }
  form button{
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-left: 30px;
         }
  .location{
         display: none;
@@ -69,4 +78,11 @@ height: 80px;
  .container-form .displayOrder{
     display: none;
   }
+  .footer {
+      background-color: darkgoldenrod;
+      border-radius: 30px;
+      height: 150px;
+
+  }
+ 
         
