@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,300&family=Style+Script&display=swap');
+.container .jumbotron img{
+width: 80px;
+height: 80px;
+}
+.container .jumbotron .title{
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
+}
+.container .jumbotron h3{
+    margin-top: 100px;
+    margin-left: 200px;
+
+
+}
+.container .jumbotron{
+    background-image: url(assetes/jumbotron.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    display: flex;
+    color: #fff;
+    font:bold;
+    font-weight: bold;
+    font-family: 'Style Script', cursive;
+}
