@@ -89,7 +89,7 @@ PizzaOrder.prototype.getTopping = function (){
     }
 }
 //user Interface
-function fullBill() {
+function fullOrderBill() {
   var sum = 0;
   $(".billPerOrder").each(function () {
   var value = $(this).text();
@@ -104,17 +104,18 @@ function fullBill() {
   var total = "Total: Ksh. " + orderBill + " .00";
   $('#result').text(result);
   $('#totalCost').text(total);
-  swal({
-  title: "Your order will be delivered to your Location at a fee of 200 shillings",
-  icon: "success",
-  })
+  alert("Your order will be delivered to your Location at a fee")
+  // swal({
+  // title: "Your order will be delivered to your Location at a fee of 200 shillings",
+  // icon: "success",
+  // })
   
   } else {
   var total = "Total: Ksh. " + sum + " .00";
   $('#totalCost').text(total)
   }
   }
-  fullBill();
+  fullOrderBill();
 //checkout button
 function checkout() {
 alert('Your order has been placed successfully. Thank You for shopping with Us')
@@ -156,8 +157,7 @@ $(function(){
   var newOrder = new PizzaOrder(inputSize, inputType, inputCrust, inputTopping);
   
   //price per order
-  var pizzaBill = (newOrder.getSize() + newOrder.getCrust() + newOrder.getTopping()) * inputquantity;
-  console.log(newOrder.size);
+  var pizzaOrderBill = (newOrder.getSize() + newOrder.getCrust() + newOrder.getTopping()) * inputquantity;
   // console.log(inputSize);
   $('.displayOrder').show();
 $(".table tbody:last").append("<tr>" +
@@ -166,10 +166,10 @@ $(".table tbody:last").append("<tr>" +
 "<td>" + $('#crust option:selected').text() + "</td>" +
 "<td>" + $('#topping option:selected').text() + "</td>" +
 "<td>" + $('#number').val() + "</td>" +
-"<td><span class='billPerOrder'>" + pizzaBill + "</span></td>" +
+"<td><span class='billPerOrder'>" + pizzaOrderBill + "</span></td>" +
 +
 "</tr>");
-$(fullBill);
+$(fullOrderBill);
 
 }
 })
