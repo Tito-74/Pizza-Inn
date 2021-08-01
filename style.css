@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,300&family=Style+Script&display=swap');
+*{
+    box-sizing: border-box;
+}
 .container .jumbotron img{
 width: 80px;
 height: 80px;
@@ -38,3 +41,29 @@ height: 80px;
     height: 200px;
     width: 250px;
 }
+.container-form{
+    align-items: center;
+    background-color: aqua;
+    justify-content: center;
+    
+}
+ .checkbox{
+    padding:0px;
+    
+}
+  form{
+    margin-left: 20%;
+  }
+  .container-form .order{
+    align-items: center;
+    width: 40%;
+    
+ }
+ form button{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        }
+ .location{
+        display: none;
+  }
+        
