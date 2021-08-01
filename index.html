@@ -167,6 +167,31 @@
                 </div>
                 <button type="submit" id="submit" onclick="">Make Order</button>
         </form>
+        <div class="container table-responsive displayOrder">
+            <table class="table">
+                <thead class="table-primary">
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Crust</th>
+                    <th>Toppings</th>
+                    <th>Quantity</th>
+                    <th id="billPerOrder">Total</th>
+                </thead>
+                <tr></tr>
+                <tbody>
+                </tbody>
+            </table>
+            <div>
+                <div class="form-group">
+                    <p id="bill"><span id="result"></span></p>
+                    <p id="bill"> <span id="totalCost"></span></p>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="button" id="checkout" value="Proceed to Checkout">
+                </div>
+            </div>
+        </div>
+            
 
     </div>
 <script src="js/main.js"></script>

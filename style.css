@@ -66,4 +66,7 @@ height: 80px;
  .location{
         display: none;
   }
+ .container-form .displayOrder{
+    display: none;
+  }
         
